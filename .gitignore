@@ -1,0 +1,6 @@
+node_modules/
+# promat.md 是 AI 协作说明，不提交远程仓库
+promat.md
+# 临时与本地产物
+*.log
+.tmp/
