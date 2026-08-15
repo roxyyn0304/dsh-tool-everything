@@ -7,6 +7,8 @@
   "files": [
     "lib/index.js",
     "native/Everything64.dll",
+    "native/LICENSE",
+    "LICENSE",
     "README.md"
   ],
   "license": "MIT",
