@@ -18,47 +18,16 @@ DSH（DeepSeek Harness）的 Everything 搜索工具插件。给 DSH Agent 注�
 ## 📋 前提
 
 - Windows 系统
-- [Everything](https://www.voidtools.com/Everything-Download) **正在运行**（`Everything.exe -startup` 即可，开机自启最稳）
+- [Everything](https://www.voidtools.com/Everything-Download) **正在运行**
 - DeepSeek Harness（DSH）profile 的 node_modules 中有 `koffi`（DSH 自带）
 
 ## 🛠️ 安装
-
-### 方式一：一键安装（推荐）
 
 ```powershell
 dsh plugin --profile web add "github:roxyyn0304/dsh-tool-everything"
 ```
 
 装完**硬刷新浏览器**（`Ctrl+Shift+R`），**新开会话**即可使用。
-
-### 方式二：从源码安装 / 开发
-
-```powershell
-git clone https://github.com/roxyyn0304/dsh-tool-everything.git
-cd dsh-tool-everything
-.\scripts\install.ps1
-```
-
-### 方式三：手动安装
-
-1. 把本仓库复制到 DSH profile 的 node_modules 下：
-
-```
-$DSH_HOME/profiles/web/node_modules/dsh-tool-everything/
-```
-
-2. 在 `$DSH_HOME/profiles/web/cordis.patch.yml` 中添加：
-
-```yaml
-- insert:
-    - id: tool-everything
-      name: 'dsh-tool-everything'
-      config:
-        maxResults: 100
-        timeoutMs: 30000
-```
-
-3. 等 DSH HMR 自动重载，**新开会话**即可使用（未生效则重启 `dsh web`）。
 
 ## ⚙️ 配置
 
@@ -67,16 +36,6 @@ $DSH_HOME/profiles/web/node_modules/dsh-tool-everything/
 | `maxResults` | `100` | 单次返回结果上限 |
 | `timeoutMs` | `30000` | 工具超时预算（ms） |
 | `everythingDllPath` | 包内 `native/` | 自定义 Everything64.dll 路径（一般不用） |
-
-## 🧪 测试
-
-```powershell
-# 将本项目复制到可解析 koffi 的目录（如 DSH profiles/node_modules/）
-# 然后运行测试脚本
-node test_everything_plugin.mjs
-```
-
-测试会模拟 DSH 环境：注册工具 → 调用 Everything 查询 → 验证格式化/卡片/空结果/参数校验。
 
 ## ❌ 错误码
 
