@@ -1,7 +1,7 @@
 {
   "name": "dsh-tool-everything",
   "description": "Model-facing Windows search tool backed by the Everything index (Everything64.dll FFI via koffi)",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "lib/index.js",
   "files": [
