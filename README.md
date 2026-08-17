@@ -26,27 +26,28 @@ DSH（DeepSeek Harness）的 Everything 搜索工具插件。给 DSH Agent 注�
 ### 方式一：一键安装（推荐）
 
 ```powershell
-# 克隆仓库
-git clone https://github.com/roxyyn0304/dsh-tool-everything.git
-cd dsh-tool-everything
-
-# 运行安装脚本（自动同步到 DSH web profile）
-.\scripts\install.ps1
-
-# 安装后在 cordis.patch.yml 中添加插件条目（脚本会提示内容）
+dsh plugin --profile web add "github:roxyyn0304/dsh-tool-everything"
 ```
 
-### 方式二：手动安装
+装完**硬刷新浏览器**（`Ctrl+Shift+R`），**新开会话**即可使用。
+
+### 方式二：从源码安装 / 开发
+
+```powershell
+git clone https://github.com/roxyyn0304/dsh-tool-everything.git
+cd dsh-tool-everything
+.\scripts\install.ps1
+```
+
+### 方式三：手动安装
 
 1. 把本仓库复制到 DSH profile 的 node_modules 下：
 
 ```
-$DSH_HOME/profiles/<profile>/node_modules/dsh-tool-everything/
+$DSH_HOME/profiles/web/node_modules/dsh-tool-everything/
 ```
 
-> 💡 通常 `profile` 是 `web`，即 `~/.dsh/profiles/web/node_modules/dsh-tool-everything/`
-
-2. 在 `$DSH_HOME/profiles/<profile>/cordis.patch.yml` 中添加：
+2. 在 `$DSH_HOME/profiles/web/cordis.patch.yml` 中添加：
 
 ```yaml
 - insert:

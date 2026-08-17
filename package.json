@@ -9,8 +9,14 @@
     "native/Everything64.dll",
     "native/LICENSE",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "cordis.patch.yml"
   ],
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.patch.yml"
+    }
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {

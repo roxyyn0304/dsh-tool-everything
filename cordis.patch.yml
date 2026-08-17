@@ -1,0 +1,6 @@
+- insert:
+    - id: tool-everything
+      name: 'dsh-tool-everything'
+      config:
+        maxResults: 100
+        timeoutMs: 30000
